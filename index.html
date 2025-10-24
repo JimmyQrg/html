@@ -8,7 +8,7 @@
   <style>
     body {
       margin: 0;
-      background: url("background2.png") no-repeat center center fixed;
+      background: url("background.png") no-repeat center center fixed;
       background-size: cover;
       color: white;
       font-family: "Josefin Sans", sans-serif;
@@ -126,7 +126,6 @@
 
     <div style="text-align:center; margin-top:20px;">
       <button class="btn" id="downloadBtn">Download</button>
-      <button class="btn" id="insertBoiler">Insert Boilerplate</button>
       <button class="btn" id="clearBtn">Clear</button>
     </div>
   </div>
@@ -139,7 +138,6 @@
     const codeEl = document.getElementById('code');
     const downloadBtn = document.getElementById('downloadBtn');
     const filenameEl = document.getElementById('filename');
-    const insertBoiler = document.getElementById('insertBoiler');
     const clearBtn = document.getElementById('clearBtn');
 
     function makeDownload() {
@@ -156,10 +154,6 @@
     }
 
     downloadBtn.addEventListener('click', makeDownload);
-
-    insertBoiler.addEventListener('click', () => {
-      codeEl.value = `<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\" />\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n  <title>My Page</title>\n</head>\n<body>\n  <h1>Hello world</h1>\n  <p>Edit this and click Download.</p>\n</body>\n</html>`;
-    });
 
     clearBtn.addEventListener('click', () => {
       if (confirm('Clear the editor?')) codeEl.value = '';
